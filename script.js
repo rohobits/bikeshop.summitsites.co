@@ -1,14 +1,14 @@
-// Capture UTM params and append to Calendly URL
+// Capture UTM params and append to the embedded Calendly link
 (function () {
   const params = new URLSearchParams(window.location.search);
-  const utmKeys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","ref","gclid"];
+  const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","ref","gclid"];
   const utm = {};
-  utmKeys.forEach(k => {
+  keys.forEach(k => {
     const v = params.get(k);
     if (v) utm[k] = v;
   });
 
-  function appendUtm() {
+  function appendUtmToCalendly() {
     const widget = document.querySelector(".calendly-inline-widget");
     if (!widget) return;
     const url = new URL(widget.getAttribute("data-url"));
@@ -16,11 +16,12 @@
     widget.setAttribute("data-url", url.toString());
   }
 
+  // Calendly loads async — retry a few times
   let tries = 0;
   const max = 20;
   const interval = setInterval(() => {
     tries++;
-    appendUtm();
+    appendUtmToCalendly();
     if (tries >= max) clearInterval(interval);
   }, 300);
 })();
