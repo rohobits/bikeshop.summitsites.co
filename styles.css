@@ -18,10 +18,7 @@
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Container width */
-.container {
-  max-width: 1200px;
-}
+.container { max-width: 1200px; }
 
 /* Hero decorative blobs */
 .hero-blob {
@@ -32,17 +29,13 @@
   pointer-events: none;
 }
 .hero-blob-1 {
-  width: 360px;
-  height: 360px;
-  left: -120px;
-  top: -60px;
+  width: 360px; height: 360px;
+  left: -120px; top: -60px;
   background: radial-gradient(closest-side, hsl(var(--summit-green-light)) 0%, transparent 70%);
 }
 .hero-blob-2 {
-  width: 420px;
-  height: 420px;
-  right: -160px;
-  bottom: -80px;
+  width: 420px; height: 420px;
+  right: -160px; bottom: -80px;
   background: radial-gradient(closest-side, hsl(var(--summit-cream)) 0%, transparent 70%);
 }
 
@@ -54,7 +47,7 @@
   border-radius: 9999px;
   background-color: white;
   padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;      /* text-sm */
+  font-size: 0.875rem; /* text-sm */
   font-weight: 500;
   color: hsl(var(--foreground));
   box-shadow: var(--shadow-card);
@@ -63,8 +56,7 @@
 .pill::before {
   content: "";
   display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.5rem; height: 0.5rem;
   border-radius: 9999px;
   background-color: hsl(var(--summit-green));
 }
