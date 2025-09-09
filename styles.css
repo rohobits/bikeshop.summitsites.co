@@ -29,4 +29,25 @@
   max-width: 1200px;
 }
 
-/* (Add any one-off overrides you want here) */
+/* Hero blobs for subtle depth (no images) */
+.hero-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(32px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.hero-blob-1 {
+  width: 360px;
+  height: 360px;
+  left: -120px;
+  top: -60px;
+  background: radial-gradient(closest-side, hsl(var(--summit-green-light)) 0%, transparent 70%);
+}
+.hero-blob-2 {
+  width: 420px;
+  height: 420px;
+  right: -160px;
+  bottom: -80px;
+  background: radial-gradient(closest-side, hsl(var(--summit-cream)) 0%, transparent 70%);
+}
