@@ -60,3 +60,57 @@
   border-radius: 9999px;
   background-color: hsl(var(--summit-green));
 }
+
+/* ---------- Modern SaaS: subtle 3D tilt + gradient edge ---------- */
+.tilt { perspective: 1200px; }
+.tilt-card {
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+  transition: transform 600ms var(--transition-smooth), box-shadow 600ms var(--transition-smooth);
+  will-change: transform;
+}
+.tilt:hover .tilt-card {
+  transform: rotateX(6deg) rotateY(-6deg) translateY(-2px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
+/* Reduce motion honor */
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card, .tilt:hover .tilt-card { transform: none !important; }
+}
+
+/* Gradient “neon” edge around the frame */
+.frame-gradient { position: relative; }
+.frame-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;                 /* border thickness */
+  border-radius: 1rem;          /* matches rounded-2xl ~ 16px */
+  background: linear-gradient(135deg,
+    hsla(144,61%,40%,0.9),
+    hsla(42,78%,60%,0.8),
+    hsla(144,41%,74%,0.9)
+  );
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Gentle shine sweep over screenshot */
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: shine-move 3.8s var(--transition-smooth) infinite;
+}
+@keyframes shine-move {
+  0%   { transform: translateX(-120%); }
+  55%  { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shine { animation: none; opacity: 0; }
+}
