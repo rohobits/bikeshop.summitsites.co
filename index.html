@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Bike Shop Websites that Feel Like YOUR Shop | Summit Sites</title>
-  <meta name="description" content="Don’t be another brand funnel. Your customers shop with you for the experience you create. Summit Sites builds identity-first bike shop websites that showcase your story—and still link to your inventory via Locally." />
+  <meta name="description" content="Don’t be another brand funnel. Your customers choose you for the experience you create. Summit Sites builds identity-first bike shop websites that showcase your story—and still link to your inventory via Locally." />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -74,10 +74,11 @@
       <div class="hero-blob hero-blob-2"></div>
 
       <div class="relative container mx-auto px-6 pt-8 pb-14 lg:pt-14 lg:pb-24">
-        <!-- Top row: logo (uses your uploaded logo.jpg) -->
+        <!-- Top row: logo (bigger + visible on all breakpoints) -->
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <img src="./logo.jpg" alt="Summit Sites" class="h-8 w-auto hidden sm:block rounded" />
+            <!-- Increased size: h-10 on mobile, h-12 md:h-14 on larger screens -->
+            <img src="./logo.jpg" alt="Summit Sites" class="h-10 sm:h-12 md:h-14 w-auto rounded" loading="eager" decoding="async" />
             <span class="sr-only">Summit Sites</span>
           </div>
           <!-- Tiny badge to set the category/scent -->
@@ -105,18 +106,18 @@
               We build bike shop websites that feel like <span class="font-semibold">your business</span>, not your suppliers’ billboard.
             </p>
 
-            <!-- Pill proof points -->
-            <div class="mt-5 flex flex-wrap items-center gap-3 text-sm">
-              <div class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 shadow-card">
-                <span class="inline-flex h-2 w-2 rounded-full bg-summit-green"></span>
+            <!-- Value pills: fixed layout (2 on the first row, 1 on the second) -->
+            <div class="mt-5 grid gap-3 sm:grid-cols-2 max-w-2xl">
+              <div class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm shadow-card">
+                <span class="inline-block h-2 w-2 rounded-full bg-summit-green"></span>
                 Brand-first design, not product-first
               </div>
-              <div class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 shadow-card">
-                <span class="inline-flex h-2 w-2 rounded-full bg-summit-green"></span>
-                Your story, team & service up front
+              <div class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm shadow-card">
+                <span class="inline-block h-2 w-2 rounded-full bg-summit-green"></span>
+                Your story, team &amp; service up front
               </div>
-              <div class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 shadow-card">
-                <span class="inline-flex h-2 w-2 rounded-full bg-summit-green"></span>
+              <div class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm shadow-card sm:col-span-2">
+                <span class="inline-block h-2 w-2 rounded-full bg-summit-green"></span>
                 Inventory links via Locally (simple)
               </div>
             </div>
@@ -177,7 +178,7 @@
                   </div>
                 </div>
 
-                <!-- Identity tiles: service/fit/events -->
+                <!-- Tiles mock -->
                 <div class="mt-5 grid grid-cols-3 gap-3">
                   <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
                   <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
@@ -222,7 +223,7 @@
       </div>
     </section>
 
-    <!-- ======== HOW IT WORKS (with Locally as support, not headline) ======== -->
+    <!-- ======== HOW IT WORKS ======== -->
     <section id="how" class="container mx-auto px-6 py-14 lg:py-20">
       <div class="mx-auto max-w-5xl">
         <h2 class="text-2xl sm:text-3xl font-semibold text-center">How We Build Identity-First Sites</h2>
@@ -247,7 +248,7 @@
       </div>
     </section>
 
-    <!-- ======== PRICING (unchanged structure, identity-first framing) ======== -->
+    <!-- ======== PRICING ======== -->
     <section id="pricing" class="container mx-auto px-6 py-14 lg:py-20">
       <div class="mx-auto max-w-5xl">
         <h2 class="text-2xl sm:text-3xl font-semibold text-center">Pricing Made Simple</h2>
@@ -296,7 +297,7 @@
       </div>
     </section>
 
-    <!-- ======== COMPARISON (reframed) ======== -->
+    <!-- ======== COMPARISON ======== -->
     <section id="compare" class="container mx-auto px-6 py-14 lg:py-20">
       <div class="mx-auto max-w-5xl">
         <h2 class="text-2xl sm:text-3xl font-semibold text-center">Catalog-First vs Identity-First</h2>
@@ -341,7 +342,7 @@
       </div>
     </section>
 
-    <!-- ======== TESTIMONIALS (identity theme) ======== -->
+    <!-- ======== TESTIMONIALS ======== -->
     <section id="proof" class="container mx-auto px-6 py-14 lg:py-20">
       <div class="mx-auto max-w-4xl">
         <h2 class="text-2xl sm:text-3xl font-semibold text-center">What Shops Say</h2>
