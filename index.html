@@ -3,25 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Workstand Alternative for Bike Shops | Summit Sites</title>
   <meta name="description" content="Already on Locally.com? Stop paying Workstand to do the same thing twice. Summit Sites builds brand-first bike shop websites with Locally integration at a lower monthly cost." />
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind CDN (fast to launch) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="./styles.css" />
-
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="./favicon.ico" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Workstand Alternative for Bike Shops | Summit Sites" />
-  <meta property="og:description" content="Already on Locally.com? Stop paying Workstand to do it twice. Brand-first websites at a lower monthly cost." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bikeshop.summitsites.co" />
-
-  <!-- Tailwind config mapping Summit tokens -->
+  <!-- Map Tailwind colors to your CSS variables -->
   <script>
     tailwind.config = {
       theme: {
@@ -59,13 +48,37 @@
       }
     }
   </script>
-</head>
-<body class="bg-summit-cream/40 text-foreground antialiased">
 
-  <!-- Main content -->
+  <!-- Your brand tokens + base styles -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="./favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Workstand Alternative for Bike Shops | Summit Sites" />
+  <meta property="og:description" content="Already on Locally.com? Stop paying Workstand to do it twice. Brand-first websites at a lower monthly cost." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bikeshop.summitsites.co" />
+
+  <!-- (Optional) Analytics — uncomment and replace IDs
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+
+  <script defer data-domain="bikeshop.summitsites.co" src="https://plausible.io/js/script.js"></script>
+  -->
+</head>
+
+<body class="bg-summit-cream/40 text-foreground antialiased">
+  <!-- No global header/footer = fewer exits, higher conversion -->
   <main class="min-h-screen">
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="relative isolate overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-white via-summit-cream/70 to-white"></div>
       <div class="relative container mx-auto px-6 py-20 lg:py-28">
@@ -80,11 +93,11 @@
           </p>
           <div class="mt-8 flex items-center justify-center gap-4">
             <a href="#book"
-               class="inline-flex items-center justify-center rounded-lg bg-summit-green px-6 py-3 text-white shadow-card hover:opacity-95 transition">
+               class="inline-flex items-center justify-center rounded-lg bg-summit-green px-6 py-3 text-white shadow-card hover:opacity-95 transition duration-200 ease-smooth">
               Book a Free Strategy Call
             </a>
             <a href="#how"
-               class="inline-flex items-center justify-center rounded-lg border border-muted bg-white px-6 py-3 text-foreground hover:bg-muted transition">
+               class="inline-flex items-center justify-center rounded-lg border border-muted bg-white px-6 py-3 text-foreground hover:bg-muted transition duration-200 ease-smooth">
               See How It Works
             </a>
           </div>
@@ -93,14 +106,208 @@
       </div>
     </section>
 
-    <!-- (Sections for Problem, How It Works, Pricing, Comparison, Testimonials, Calendly booking) -->
-    <!-- Keep the exact content from the earlier version I wrote, just now styled with your Summit tokens -->
-    <!-- To keep this message short, I won’t repeat every section line by line unless you’d like me to expand them here again -->
-    
+    <!-- PROBLEM / SWITCH -->
+    <section id="problem" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Workstand sells products. You sell a shop experience.</h2>
+        <div class="mt-5 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <h3 class="font-semibold">The duplication problem</h3>
+            <p class="mt-2 text-muted-foreground">
+              If you use <span class="font-medium">Locally.com</span> to share real-time inventory, you don’t need a second paid sync.
+              Locally is essentially free until a customer checks out there—so why pay Workstand every month to list the same stock?
+            </p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <h3 class="font-semibold">Your brand, front and center</h3>
+            <p class="mt-2 text-muted-foreground">
+              We focus on your <span class="font-medium">story, service, and community</span>—not stuffing your site with generic product feeds.
+              Result: higher trust, more calls, more in-store visits, and a site that feels like your shop.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">How Summit Sites Works for Bike Shops</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">1. Your Story First</div>
+            <p class="mt-2 text-muted-foreground">People, service, and culture take center stage with a clean, modern design.</p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">2. Locally Storefront</div>
+            <p class="mt-2 text-muted-foreground">No-frills shop page + clear “Shop with Locally” buttons that link directly to your Locally experience.</p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">3. Lower Monthly Cost</div>
+            <p class="mt-2 text-muted-foreground">Keep overhead lean with simple, honest monthly plans instead of bloated fees.</p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">4. Ongoing Support</div>
+            <p class="mt-2 text-muted-foreground">Monthly edits, SEO basics, and content refreshes so your site stays sharp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALLY STOREFRONT -->
+    <section id="storefront" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Already sharing inventory on Locally?</h2>
+        <p class="mt-3 text-muted-foreground">
+          Perfect. We’ll showcase your brand and link customers straight to your Locally store. No duplicated fees, no extra complexity.
+        </p>
+
+        <div class="mt-6 inline-flex items-center rounded-lg border border-muted bg-white px-5 py-3 text-foreground shadow-card">
+          <span class="mr-3 inline-block h-2.5 w-2.5 rounded-full bg-summit-green"></span>
+          “Shop Now” → takes customers to your Locally page
+        </div>
+
+        <!-- Replace # with a real Locally link when tailoring for a specific shop -->
+        <div class="mt-6">
+          <a href="#"
+             class="inline-flex items-center justify-center rounded-lg bg-summit-green px-6 py-3 text-white shadow-card hover:opacity-95 transition duration-200 ease-smooth">
+            View Example Locally Integration
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">Pricing Made Simple</h2>
+        <p class="mt-3 text-center text-muted-foreground">Choose a setup + monthly plan that fits your shop. Lower monthly costs than Workstand.</p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <!-- Starter -->
+          <div class="rounded-2xl bg-card p-6 shadow-card flex flex-col">
+            <div class="text-sm font-semibold text-summit-green">Starter</div>
+            <div class="mt-2 text-3xl font-semibold">$799</div>
+            <div class="text-muted-foreground">one-time • $0/mo</div>
+            <ul class="mt-5 space-y-2 text-foreground/80">
+              <li>Home, About, Contact</li>
+              <li>“Shop with Locally” buttons</li>
+              <li>Responsive, fast, clean design</li>
+            </ul>
+            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-3 text-white hover:opacity-90 transition duration-200 ease-smooth">Get Started</a>
+          </div>
+
+          <!-- Growth -->
+          <div class="rounded-2xl bg-card p-6 shadow-card ring-2 ring-summit-green/30 flex flex-col">
+            <div class="text-sm font-semibold text-summit-green">Growth</div>
+            <div class="mt-2 text-3xl font-semibold">$1,499</div>
+            <div class="text-muted-foreground">setup + <span class="font-medium">$149/mo</span></div>
+            <ul class="mt-5 space-y-2 text-foreground/80">
+              <li>3–5 pages (About, Staff, Testimonials)</li>
+              <li>Locally integration + newsletter sign-up</li>
+              <li>Monthly edits &amp; basic SEO</li>
+            </ul>
+            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-summit-green px-5 py-3 text-white hover:opacity-95 transition duration-200 ease-smooth">Choose Growth</a>
+          </div>
+
+          <!-- Premium -->
+          <div class="rounded-2xl bg-card p-6 shadow-card flex flex-col">
+            <div class="text-sm font-semibold text-summit-green">Premium Brand Showcase</div>
+            <div class="mt-2 text-3xl font-semibold">$2,499</div>
+            <div class="text-muted-foreground">setup + <span class="font-medium">$249/mo</span></div>
+            <ul class="mt-5 space-y-2 text-foreground/80">
+              <li>6–7 pages (rides/events/blog options)</li>
+              <li>Locally links + ongoing updates</li>
+              <li>Priority support &amp; SEO tune-ups</li>
+            </ul>
+            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-3 text-white hover:opacity-90 transition duration-200 ease-smooth">Go Premium</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section id="compare" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">Workstand vs Summit Sites</h2>
+        <div class="mt-8 overflow-x-auto">
+          <table class="w-full min-w-[720px] border-separate border-spacing-y-2">
+            <thead>
+              <tr class="text-left text-sm text-muted-foreground">
+                <th class="px-4 py-2">Feature</th>
+                <th class="px-4 py-2">Workstand</th>
+                <th class="px-4 py-2">Summit Sites</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Inventory Sync</td>
+                <td class="px-4 py-3">Paid monthly product feeds</td>
+                <td class="px-4 py-3"><span class="font-semibold">Free via Locally.com</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Site Focus</td>
+                <td class="px-4 py-3">Product catalog</td>
+                <td class="px-4 py-3"><span class="font-semibold">Your shop’s identity</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Monthly Fees</td>
+                <td class="px-4 py-3">$$$</td>
+                <td class="px-4 py-3"><span class="font-semibold">$149–$249</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Design Style</td>
+                <td class="px-4 py-3">Template-heavy</td>
+                <td class="px-4 py-3"><span class="font-semibold">Custom, story-driven</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Result</td>
+                <td class="px-4 py-3">Looks like everyone else</td>
+                <td class="px-4 py-3"><span class="font-semibold">Your brand stands out</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="proof" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">What Shops Say</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <p class="text-foreground/90 italic">“We switched from Workstand and saved hundreds a month. Locally handles inventory—Summit Sites made our shop stand out.”</p>
+            <div class="mt-3 text-sm text-muted-foreground">— Mike, Independent Bike Dealer</div>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <p class="text-foreground/90 italic">“The site finally feels like us—clean, fast, and focused on our service. Customers actually read our story.”</p>
+            <div class="mt-3 text-sm text-muted-foreground">— Jess, Store Manager</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK A CALL (Calendly) -->
+    <section id="book" class="container mx-auto px-6 pb-20">
+      <div class="mx-auto max-w-3xl rounded-2xl bg-card p-6 shadow-card">
+        <h2 class="text-xl sm:text-2xl font-semibold text-center">Already on Locally? Stop paying Workstand to do it twice.</h2>
+        <p class="mt-2 text-center text-muted-foreground">Pick a time that works for you. We’ll review your current stack and show you how much you can save.</p>
+
+        <!-- Replace with your actual Calendly booking URL -->
+        <div class="mt-6">
+          <div class="calendly-inline-widget w-full"
+               data-url="https://calendly.com/YOUR-CALENDLY-SLUG?hide_gdpr_banner=1"
+               style="min-width:320px;height:680px;"></div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Calendly script -->
+  <!-- Calendly -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- UTM → Calendly helper -->
   <script src="./script.js"></script>
 </body>
 </html>
