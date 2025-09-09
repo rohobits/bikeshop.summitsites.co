@@ -1,333 +1,116 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
 
-  <title>Bike Shop Websites that Feel Like YOUR Shop | Summit Sites</title>
-  <meta name="description" content="Don’t be another brand funnel. Your customers choose you for the experience you create. Summit Sites builds identity-first bike shop websites that showcase your story—and still link to your inventory via Locally." />
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
 
-  <!-- Tailwind config mapped to CSS variables -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            summit: {
-              green: 'hsl(var(--summit-green) / <alpha-value>)',
-              "green-light": 'hsl(var(--summit-green-light) / <alpha-value>)',
-              cream: 'hsl(var(--summit-cream) / <alpha-value>)',
-              earth: 'hsl(var(--summit-earth) / <alpha-value>)',
-            },
-            background: 'hsl(var(--background))',
-            foreground: 'hsl(var(--foreground))',
-            muted: 'hsl(var(--muted))',
-            "muted-foreground": 'hsl(var(--muted-foreground))',
-            card: 'hsl(var(--card))',
-            "card-foreground": 'hsl(var(--card-foreground))',
-          },
-          borderRadius: {
-            lg: 'var(--radius)',
-            md: 'calc(var(--radius) - 2px)',
-            sm: 'calc(var(--radius) - 4px)',
-          },
-          boxShadow: {
-            card: 'var(--shadow-card)',
-          },
-          transitionTimingFunction: {
-            smooth: 'var(--transition-smooth)',
-          },
-        }
-      }
-    }
-  </script>
+  --summit-green: 144 61% 40%;
+  --summit-green-light: 144 41% 74%;
+  --summit-cream: 42 78% 90%;
+  --summit-earth: 28 38% 35%;
 
-  <!-- Brand tokens -->
-  <link rel="stylesheet" href="./styles.css" />
+  --radius: 0.5rem;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.1);
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  <link rel="icon" href="./favicon.ico" />
-</head>
+.container { max-width: 1200px; }
 
-<body class="bg-summit-cream/40 text-foreground antialiased">
-  <main class="min-h-screen">
+/* Hero decorative blobs */
+.hero-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(32px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.hero-blob-1 {
+  width: 360px; height: 360px;
+  left: -120px; top: -60px;
+  background: radial-gradient(closest-side, hsl(var(--summit-green-light)) 0%, transparent 70%);
+}
+.hero-blob-2 {
+  width: 420px; height: 420px;
+  right: -160px; bottom: -80px;
+  background: radial-gradient(closest-side, hsl(var(--summit-cream)) 0%, transparent 70%);
+}
 
-    <!-- ================= HERO ================= -->
-    <section class="relative isolate overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-white via-summit-cream/70 to-white"></div>
-      <div class="hero-blob hero-blob-1"></div>
-      <div class="hero-blob hero-blob-2"></div>
+/* Pill style for consistent badges */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  box-shadow: var(--shadow-card);
+  white-space: nowrap;
+}
+.pill::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem; height: 0.5rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--summit-green));
+}
 
-      <div class="relative container mx-auto px-6 pt-12 pb-14 lg:pt-16 lg:pb-24">
-        <div class="grid items-center gap-10 lg:grid-cols-2">
-          <!-- LEFT -->
-          <div>
-            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
-              Don’t Be Another Brand Funnel.
-            </h1>
+/* ---------- Modern SaaS: subtle 3D tilt + gradient edge ---------- */
+.tilt { perspective: 1200px; }
+.tilt-card {
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+  transition: transform 600ms var(--transition-smooth), box-shadow 600ms var(--transition-smooth);
+  will-change: transform;
+}
+.tilt:hover .tilt-card {
+  transform: rotateX(6deg) rotateY(-6deg) translateY(-2px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
+/* Reduce motion honor */
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card, .tilt:hover .tilt-card { transform: none !important; }
+}
 
-            <p class="mt-4 text-lg text-muted-foreground">
-              Your customers don’t choose you because you carry the same brands as everyone else—
-              <span class="font-semibold">they choose you for the experience you create</span>.
-              We build bike shop websites that feel like <span class="font-semibold">your business</span>, not your suppliers’ billboard.
-            </p>
+/* Gradient “neon” edge around the frame */
+.frame-gradient { position: relative; }
+.frame-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;                 /* border thickness */
+  border-radius: 1rem;          /* matches rounded-2xl ~ 16px */
+  background: linear-gradient(135deg,
+    hsla(144,61%,40%,0.9),
+    hsla(42,78%,60%,0.8),
+    hsla(144,41%,74%,0.9)
+  );
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
 
-            <!-- Value pills: 2×2 grid -->
-            <div class="mt-6 grid grid-cols-2 gap-3 max-w-xl">
-              <div class="pill">Brand-first design, not product-first</div>
-              <div class="pill">Your story, team &amp; service up front</div>
-              <div class="pill">Inventory links via Locally (simple)</div>
-              <div class="pill">Identity-First Bike Shop Websites</div>
-            </div>
-
-            <!-- CTAs -->
-            <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a href="#book"
-                 class="inline-flex items-center justify-center rounded-lg bg-summit-green px-6 py-3 text-white shadow-card hover:opacity-95 transition duration-200 ease-smooth">
-                Book a Free Strategy Call
-              </a>
-              <a href="#identity"
-                 class="inline-flex items-center justify-center rounded-lg border border-muted bg-white px-6 py-3 text-foreground hover:bg-muted transition duration-200 ease-smooth">
-                See Identity-First Layout
-              </a>
-            </div>
-
-            <div class="mt-3 text-xs text-muted-foreground">
-              Less catalog noise • More reasons to choose your shop • Lower monthly than Workstand
-            </div>
-          </div>
-
-          <!-- RIGHT: mock browser preview with REAL screenshot -->
-          <div aria-hidden="true" class="mx-auto w-full max-w-[560px]">
-            <div class="rounded-xl bg-white shadow-card ring-1 ring-muted/60 overflow-hidden">
-              <!-- Browser chrome -->
-              <div class="flex items-center gap-2 bg-muted px-3 py-2">
-                <span class="inline-flex h-2.5 w-2.5 rounded-full bg-red-400"></span>
-                <span class="inline-flex h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-                <span class="inline-flex h-2.5 w-2.5 rounded-full bg-green-400"></span>
-                <div class="ml-3 flex-1 truncate rounded bg-white/80 px-2 py-1 text-[11px] text-muted-foreground">
-                  yourshop.com — Story-driven homepage with Locally “Shop Now”
-                </div>
-              </div>
-
-              <!-- Screenshot inside the frame -->
-              <div class="p-5 sm:p-6">
-                <div class="relative overflow-hidden rounded-lg ring-1 ring-muted/60">
-                  <!-- Replace steamboat-home.webp with your uploaded filename -->
-                  <img
-                    src="./steamboat-home.webp"
-                    alt="Example homepage preview (Steamboat Ski & Bike)"
-                    class="block w-full h-auto object-cover"
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <!-- Clickable overlay to visit the real site -->
-                  <a href="https://steamboatskiandbike.com" target="_blank" rel="noopener"
-                     class="absolute bottom-2 right-2 rounded bg-white/90 px-2 py-1 text-xs font-medium shadow-card hover:bg-white">
-                    View live site →
-                  </a>
-                </div>
-
-                <!-- Lower UI placeholders kept for structure -->
-                <div class="mt-5 grid grid-cols-3 gap-3">
-                  <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
-                  <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
-                  <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
-                </div>
-                <div class="mt-5 flex items-center justify-between rounded-md border border-muted bg-white px-3 py-2 text-[13px]">
-                  <span class="text-muted-foreground">Ready to browse inventory?</span>
-                  <span class="inline-flex items-center gap-2 rounded bg-summit-green px-2.5 py-1.5 text-white">Shop Now (Locally)</span>
-                </div>
-              </div>
-            </div>
-            <div class="mt-3 text-center text-xs text-muted-foreground">
-              Preview: identity-first layout; inventory is a supportive next step
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= IDENTITY OVER CATALOG ================= -->
-    <section id="identity" class="container mx-auto px-6 py-14 lg:py-20">
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Your Shop &gt; Their Brand</h2>
-        <p class="mt-3 text-muted-foreground">
-          Most bike websites look like brand catalogs. We design for <span class="font-medium">why customers choose you</span>:
-          your fit expertise, service quality, ride community, and the people behind the counter.
-        </p>
-      </div>
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl bg-card p-6 shadow-card">
-          <div class="text-sm font-semibold text-summit-green">Service &amp; Fit</div>
-          <p class="mt-2 text-muted-foreground">Make booking a tune or fit effortless with clear CTAs and quick forms.</p>
-        </div>
-        <div class="rounded-2xl bg-card p-6 shadow-card">
-          <div class="text-sm font-semibold text-summit-green">Story &amp; Team</div>
-          <p class="mt-2 text-muted-foreground">Show the people, values, and history that make your shop the local favorite.</p>
-        </div>
-        <div class="rounded-2xl bg-card p-6 shadow-card">
-          <div class="text-sm font-semibold text-summit-green">Community &amp; Rides</div>
-          <p class="mt-2 text-muted-foreground">Events, group rides, and causes you support—turn visitors into regulars.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= HOW IT WORKS ================= -->
-    <section id="how" class="container mx-auto px-6 py-14 lg:py-20">
-      <div class="mx-auto max-w-5xl">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-center">How We Build Identity-First Sites</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-2xl bg-card p-6 shadow-card">
-            <div class="text-sm font-semibold text-summit-green">1) Discovery</div>
-            <p class="mt-2 text-muted-foreground">We learn your voice, audience, and what makes your shop different.</p>
-          </div>
-          <div class="rounded-2xl bg-card p-6 shadow-card">
-            <div class="text-sm font-semibold text-summit-green">2) Design for You</div>
-            <p class="mt-2 text-muted-foreground">Custom layouts highlight service, story, and trust—before product grids.</p>
-          </div>
-          <div class="rounded-2xl bg-card p-6 shadow-card">
-            <div class="text-sm font-semibold text-summit-green">3) Inventory, Simplified</div>
-            <p class="mt-2 text-muted-foreground">Already using Locally? Perfect—link “Shop Now” straight to it. No duplicate overhead.</p>
-          </div>
-          <div class="rounded-2xl bg-card p-6 shadow-card">
-            <div class="text-sm font-semibold text-summit-green">4) Ongoing Support</div>
-            <p class="mt-2 text-muted-foreground">Monthly updates and SEO basics so your site stays sharp and true to your brand.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PRICING ================= -->
-    <section id="pricing" class="container mx-auto px-6 py-14 lg:py-20">
-      <div class="mx-auto max-w-5xl">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-center">Pricing Made Simple</h2>
-        <p class="mt-3 text-center text-muted-foreground">Choose a setup + monthly plan that invests in <span class="font-medium">your brand</span>, not just product feeds.</p>
-
-        <div class="mt-8 grid gap-6 lg:grid-cols-3">
-          <!-- Starter -->
-          <div class="rounded-2xl bg-card p-6 shadow-card flex flex-col">
-            <div class="text-sm font-semibold text-summit-green">Starter</div>
-            <div class="mt-2 text-3xl font-semibold">$799</div>
-            <div class="text-muted-foreground">one-time • $0/mo</div>
-            <ul class="mt-5 space-y-2 text-foreground/80">
-              <li>Home, About, Contact</li>
-              <li>Identity-first layout &amp; copy</li>
-              <li>“Shop Now” link to Locally</li>
-            </ul>
-            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-3 text-white hover:opacity-90 transition duration-200 ease-smooth">Get Started</a>
-          </div>
-
-          <!-- Growth -->
-          <div class="rounded-2xl bg-card p-6 shadow-card ring-2 ring-summit-green/30 flex flex-col">
-            <div class="text-sm font-semibold text-summit-green">Growth</div>
-            <div class="mt-2 text-3xl font-semibold">$1,499</div>
-            <div class="text-muted-foreground">setup + <span class="font-medium">$149/mo</span></div>
-            <ul class="mt-5 space-y-2 text-foreground/80">
-              <li>3–5 pages (Staff, Testimonials)</li>
-              <li>Locally integration + newsletter sign-up</li>
-              <li>Monthly edits &amp; SEO basics</li>
-            </ul>
-            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-summit-green px-5 py-3 text-white hover:opacity-95 transition duration-200 ease-smooth">Choose Growth</a>
-          </div>
-
-          <!-- Premium -->
-          <div class="rounded-2xl bg-card p-6 shadow-card flex flex-col">
-            <div class="text-sm font-semibold text-summit-green">Premium Brand Showcase</div>
-            <div class="mt-2 text-3xl font-semibold">$2,499</div>
-            <div class="text-muted-foreground">setup + <span class="font-medium">$249/mo</span></div>
-            <ul class="mt-5 space-y-2 text-foreground/80">
-              <li>6–7 pages (rides/events/blog options)</li>
-              <li>Deeper storytelling + Locally links</li>
-              <li>Priority support &amp; SEO tune-ups</li>
-            </ul>
-            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-3 text-white hover:opacity-90 transition duration-200 ease-smooth">Go Premium</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= COMPARISON ================= -->
-    <section id="compare" class="container mx-auto px-6 py-14 lg:py-20">
-      <div class="mx-auto max-w-5xl">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-center">Catalog-First vs Identity-First</h2>
-        <div class="mt-8 overflow-x-auto">
-          <table class="w-full min-w-[720px] border-separate border-spacing-y-2">
-            <thead>
-              <tr class="text-left text-sm text-muted-foreground">
-                <th class="px-4 py-2">Approach</th>
-                <th class="px-4 py-2">Catalog-First (Typical)</th>
-                <th class="px-4 py-2">Identity-First (Summit Sites)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="bg-card shadow-card">
-                <td class="px-4 py-3 font-medium">What leads the page</td>
-                <td class="px-4 py-3">Brand logos &amp; product grids</td>
-                <td class="px-4 py-3"><span class="font-semibold">Your story, service, &amp; team</span></td>
-              </tr>
-              <tr class="bg-card shadow-card">
-                <td class="px-4 py-3 font-medium">Primary CTA</td>
-                <td class="px-4 py-3">Browse products</td>
-                <td class="px-4 py-3"><span class="font-semibold">Book service • Meet team • Visit</span></td>
-              </tr>
-              <tr class="bg-card shadow-card">
-                <td class="px-4 py-3 font-medium">Inventory</td>
-                <td class="px-4 py-3">Complex, costly syncs</td>
-                <td class="px-4 py-3"><span class="font-semibold">Simple Locally links (use what you have)</span></td>
-              </tr>
-              <tr class="bg-card shadow-card">
-                <td class="px-4 py-3 font-medium">Monthly cost</td>
-                <td class="px-4 py-3">$$$</td>
-                <td class="px-4 py-3"><span class="font-semibold">$149–$249</span></td>
-              </tr>
-              <tr class="bg-card shadow-card">
-                <td class="px-4 py-3 font-medium">Result</td>
-                <td class="px-4 py-3">Looks like everyone else</td>
-                <td class="px-4 py-3"><span class="font-semibold">Your brand stands out</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= TESTIMONIALS ================= -->
-    <section id="proof" class="container mx-auto px-6 py-14 lg:py-20">
-      <div class="mx-auto max-w-4xl">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-center">What Shops Say</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="rounded-2xl bg-card p-6 shadow-card">
-            <p class="text-foreground/90 italic">“Our site finally feels like us. Customers book service and learn our story before they ever hit an inventory page.”</p>
-            <div class="mt-3 text-sm text-muted-foreground">— Mike, Independent Bike Dealer</div>
-          </div>
-          <div class="rounded-2xl bg-card p-6 shadow-card">
-            <p class="text-foreground/90 italic">“Summit Sites shifted us from product-first to people-first. Engagement is up and calls are way easier to earn.”</p>
-            <div class="mt-3 text-sm text-muted-foreground">— Jess, Store Manager</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= BOOK A CALL (Calendly) ================= -->
-    <section id="book" class="container mx-auto px-6 pb-20">
-      <div class="mx-auto max-w-3xl rounded-2xl bg-card p-6 shadow-card">
-        <h2 class="text-xl sm:text-2xl font-semibold text-center">Ready to make your website feel like YOUR shop?</h2>
-        <p class="mt-2 text-center text-muted-foreground">Pick a time that works for you. We’ll review your current site and map an identity-first upgrade.</p>
-
-        <div class="mt-6">
-          <div class="calendly-inline-widget w-full"
-               data-url="https://calendly.com/foster-nailyournewsletter?hide_gdpr_banner=1"
-               style="min-width:320px;height:680px;"></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script src="./script.js"></script>
-</body>
-</html>
+/* Gentle shine sweep over screenshot */
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: shine-move 3.8s var(--transition-smooth) infinite;
+}
+@keyframes shine-move {
+  0%   { transform: translateX(-120%); }
+  55%  { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shine { animation: none; opacity: 0; }
+}
