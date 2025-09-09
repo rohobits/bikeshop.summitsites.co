@@ -5,12 +5,6 @@
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
 
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
 
@@ -24,12 +18,11 @@
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Optional: match your main container width feel */
 .container {
   max-width: 1200px;
 }
 
-/* Hero blobs for subtle depth (no images) */
+/* Hero blobs */
 .hero-blob {
   position: absolute;
   border-radius: 9999px;
@@ -50,4 +43,27 @@
   right: -160px;
   bottom: -80px;
   background: radial-gradient(closest-side, hsl(var(--summit-cream)) 0%, transparent 70%);
+}
+
+/* Pill style for consistency */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem; /* consistent sm text */
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  box-shadow: var(--shadow-card);
+  white-space: nowrap;
+}
+.pill::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--summit-green));
 }
