@@ -48,7 +48,6 @@
   <!-- Brand tokens -->
   <link rel="stylesheet" href="./styles.css" />
 
-  <!-- Favicon (optional) -->
   <link rel="icon" href="./favicon.ico" />
 </head>
 
@@ -57,7 +56,6 @@
 
     <!-- ================= HERO ================= -->
     <section class="relative isolate overflow-hidden">
-      <!-- Soft background + blobs -->
       <div class="absolute inset-0 bg-gradient-to-br from-white via-summit-cream/70 to-white"></div>
       <div class="hero-blob hero-blob-1"></div>
       <div class="hero-blob hero-blob-2"></div>
@@ -101,7 +99,7 @@
             </div>
           </div>
 
-          <!-- RIGHT: mock browser preview -->
+          <!-- RIGHT: mock browser preview with REAL screenshot -->
           <div aria-hidden="true" class="mx-auto w-full max-w-[560px]">
             <div class="rounded-xl bg-white shadow-card ring-1 ring-muted/60 overflow-hidden">
               <!-- Browser chrome -->
@@ -113,30 +111,26 @@
                   yourshop.com — Story-driven homepage with Locally “Shop Now”
                 </div>
               </div>
-              <!-- Page mock -->
-              <div class="p-5 sm:p-6">
-                <div class="grid grid-cols-5 gap-4">
-                  <div class="col-span-5 sm:col-span-3">
-                    <div class="h-6 w-56 rounded bg-muted"></div>
-                    <div class="mt-2 h-3 w-64 rounded bg-muted"></div>
-                    <div class="mt-2 h-3 w-52 rounded bg-muted"></div>
 
-                    <div class="mt-4 inline-flex items-center gap-2 rounded-md bg-summit-green px-3 py-2 text-xs text-white shadow-card">
-                      Book a Service
-                    </div>
-                    <div class="ml-2 inline-flex items-center gap-2 rounded-md border border-muted bg-white px-3 py-2 text-xs text-foreground">
-                      Meet the Team
-                    </div>
-                  </div>
-                  <div class="col-span-5 sm:col-span-2">
-                    <div class="h-28 w-full rounded-md bg-gradient-to-br from-summit-cream to-white"></div>
-                    <div class="mt-2 grid grid-cols-3 gap-2">
-                      <div class="h-10 rounded bg-muted"></div>
-                      <div class="h-10 rounded bg-muted"></div>
-                      <div class="h-10 rounded bg-muted"></div>
-                    </div>
-                  </div>
+              <!-- Screenshot inside the frame -->
+              <div class="p-5 sm:p-6">
+                <div class="relative overflow-hidden rounded-lg ring-1 ring-muted/60">
+                  <!-- Replace steamboat-home.webp with your uploaded filename -->
+                  <img
+                    src="./steamboat-home.webp"
+                    alt="Example homepage preview (Steamboat Ski & Bike)"
+                    class="block w-full h-auto object-cover"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <!-- Clickable overlay to visit the real site -->
+                  <a href="https://steamboatskiandbike.com" target="_blank" rel="noopener"
+                     class="absolute bottom-2 right-2 rounded bg-white/90 px-2 py-1 text-xs font-medium shadow-card hover:bg-white">
+                    View live site →
+                  </a>
                 </div>
+
+                <!-- Lower UI placeholders kept for structure -->
                 <div class="mt-5 grid grid-cols-3 gap-3">
                   <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
                   <div class="h-20 rounded-lg bg-white ring-1 ring-muted/60 shadow-card"></div>
@@ -323,7 +317,6 @@
         <h2 class="text-xl sm:text-2xl font-semibold text-center">Ready to make your website feel like YOUR shop?</h2>
         <p class="mt-2 text-center text-muted-foreground">Pick a time that works for you. We’ll review your current site and map an identity-first upgrade.</p>
 
-        <!-- Calendly: your slug foster-nailyournewsletter -->
         <div class="mt-6">
           <div class="calendly-inline-widget w-full"
                data-url="https://calendly.com/foster-nailyournewsletter?hide_gdpr_banner=1"
@@ -334,9 +327,7 @@
 
   </main>
 
-  <!-- Calendly -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <!-- UTM passthrough -->
   <script src="./script.js"></script>
 </body>
 </html>
