@@ -24,7 +24,9 @@
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Container width */
+/* Optional: match your main container width feel */
 .container {
   max-width: 1200px;
 }
+
+/* (Add any one-off overrides you want here) */
