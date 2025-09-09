@@ -47,13 +47,17 @@
 
   <!-- Brand tokens -->
   <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="./favicon.ico" />
 </head>
 
 <body class="bg-summit-cream/40 text-foreground antialiased">
   <main class="min-h-screen">
 
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
     <section class="relative isolate overflow-hidden">
+      <!-- Soft background + blobs -->
       <div class="absolute inset-0 bg-gradient-to-br from-white via-summit-cream/70 to-white"></div>
       <div class="hero-blob hero-blob-1"></div>
       <div class="hero-blob hero-blob-2"></div>
@@ -72,7 +76,7 @@
               We build bike shop websites that feel like <span class="font-semibold">your business</span>, not your suppliers’ billboard.
             </p>
 
-            <!-- 2x2 grid of pills -->
+            <!-- Value pills: 2×2 grid -->
             <div class="mt-6 grid grid-cols-2 gap-3 max-w-xl">
               <div class="pill">Brand-first design, not product-first</div>
               <div class="pill">Your story, team &amp; service up front</div>
@@ -100,6 +104,7 @@
           <!-- RIGHT: mock browser preview -->
           <div aria-hidden="true" class="mx-auto w-full max-w-[560px]">
             <div class="rounded-xl bg-white shadow-card ring-1 ring-muted/60 overflow-hidden">
+              <!-- Browser chrome -->
               <div class="flex items-center gap-2 bg-muted px-3 py-2">
                 <span class="inline-flex h-2.5 w-2.5 rounded-full bg-red-400"></span>
                 <span class="inline-flex h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
@@ -108,6 +113,7 @@
                   yourshop.com — Story-driven homepage with Locally “Shop Now”
                 </div>
               </div>
+              <!-- Page mock -->
               <div class="p-5 sm:p-6">
                 <div class="grid grid-cols-5 gap-4">
                   <div class="col-span-5 sm:col-span-3">
@@ -150,12 +156,187 @@
       </div>
     </section>
 
-    <!-- (other sections: identity, how, pricing, compare, proof, book...) remain unchanged from the last version -->
-    <!-- Just keep them as you already have them. -->
+    <!-- ================= IDENTITY OVER CATALOG ================= -->
+    <section id="identity" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Your Shop &gt; Their Brand</h2>
+        <p class="mt-3 text-muted-foreground">
+          Most bike websites look like brand catalogs. We design for <span class="font-medium">why customers choose you</span>:
+          your fit expertise, service quality, ride community, and the people behind the counter.
+        </p>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl bg-card p-6 shadow-card">
+          <div class="text-sm font-semibold text-summit-green">Service &amp; Fit</div>
+          <p class="mt-2 text-muted-foreground">Make booking a tune or fit effortless with clear CTAs and quick forms.</p>
+        </div>
+        <div class="rounded-2xl bg-card p-6 shadow-card">
+          <div class="text-sm font-semibold text-summit-green">Story &amp; Team</div>
+          <p class="mt-2 text-muted-foreground">Show the people, values, and history that make your shop the local favorite.</p>
+        </div>
+        <div class="rounded-2xl bg-card p-6 shadow-card">
+          <div class="text-sm font-semibold text-summit-green">Community &amp; Rides</div>
+          <p class="mt-2 text-muted-foreground">Events, group rides, and causes you support—turn visitors into regulars.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">How We Build Identity-First Sites</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">1) Discovery</div>
+            <p class="mt-2 text-muted-foreground">We learn your voice, audience, and what makes your shop different.</p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">2) Design for You</div>
+            <p class="mt-2 text-muted-foreground">Custom layouts highlight service, story, and trust—before product grids.</p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">3) Inventory, Simplified</div>
+            <p class="mt-2 text-muted-foreground">Already using Locally? Perfect—link “Shop Now” straight to it. No duplicate overhead.</p>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <div class="text-sm font-semibold text-summit-green">4) Ongoing Support</div>
+            <p class="mt-2 text-muted-foreground">Monthly updates and SEO basics so your site stays sharp and true to your brand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section id="pricing" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">Pricing Made Simple</h2>
+        <p class="mt-3 text-center text-muted-foreground">Choose a setup + monthly plan that invests in <span class="font-medium">your brand</span>, not just product feeds.</p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <!-- Starter -->
+          <div class="rounded-2xl bg-card p-6 shadow-card flex flex-col">
+            <div class="text-sm font-semibold text-summit-green">Starter</div>
+            <div class="mt-2 text-3xl font-semibold">$799</div>
+            <div class="text-muted-foreground">one-time • $0/mo</div>
+            <ul class="mt-5 space-y-2 text-foreground/80">
+              <li>Home, About, Contact</li>
+              <li>Identity-first layout &amp; copy</li>
+              <li>“Shop Now” link to Locally</li>
+            </ul>
+            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-3 text-white hover:opacity-90 transition duration-200 ease-smooth">Get Started</a>
+          </div>
+
+          <!-- Growth -->
+          <div class="rounded-2xl bg-card p-6 shadow-card ring-2 ring-summit-green/30 flex flex-col">
+            <div class="text-sm font-semibold text-summit-green">Growth</div>
+            <div class="mt-2 text-3xl font-semibold">$1,499</div>
+            <div class="text-muted-foreground">setup + <span class="font-medium">$149/mo</span></div>
+            <ul class="mt-5 space-y-2 text-foreground/80">
+              <li>3–5 pages (Staff, Testimonials)</li>
+              <li>Locally integration + newsletter sign-up</li>
+              <li>Monthly edits &amp; SEO basics</li>
+            </ul>
+            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-summit-green px-5 py-3 text-white hover:opacity-95 transition duration-200 ease-smooth">Choose Growth</a>
+          </div>
+
+          <!-- Premium -->
+          <div class="rounded-2xl bg-card p-6 shadow-card flex flex-col">
+            <div class="text-sm font-semibold text-summit-green">Premium Brand Showcase</div>
+            <div class="mt-2 text-3xl font-semibold">$2,499</div>
+            <div class="text-muted-foreground">setup + <span class="font-medium">$249/mo</span></div>
+            <ul class="mt-5 space-y-2 text-foreground/80">
+              <li>6–7 pages (rides/events/blog options)</li>
+              <li>Deeper storytelling + Locally links</li>
+              <li>Priority support &amp; SEO tune-ups</li>
+            </ul>
+            <a href="#book" class="mt-6 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-3 text-white hover:opacity-90 transition duration-200 ease-smooth">Go Premium</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPARISON ================= -->
+    <section id="compare" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">Catalog-First vs Identity-First</h2>
+        <div class="mt-8 overflow-x-auto">
+          <table class="w-full min-w-[720px] border-separate border-spacing-y-2">
+            <thead>
+              <tr class="text-left text-sm text-muted-foreground">
+                <th class="px-4 py-2">Approach</th>
+                <th class="px-4 py-2">Catalog-First (Typical)</th>
+                <th class="px-4 py-2">Identity-First (Summit Sites)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">What leads the page</td>
+                <td class="px-4 py-3">Brand logos &amp; product grids</td>
+                <td class="px-4 py-3"><span class="font-semibold">Your story, service, &amp; team</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Primary CTA</td>
+                <td class="px-4 py-3">Browse products</td>
+                <td class="px-4 py-3"><span class="font-semibold">Book service • Meet team • Visit</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Inventory</td>
+                <td class="px-4 py-3">Complex, costly syncs</td>
+                <td class="px-4 py-3"><span class="font-semibold">Simple Locally links (use what you have)</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Monthly cost</td>
+                <td class="px-4 py-3">$$$</td>
+                <td class="px-4 py-3"><span class="font-semibold">$149–$249</span></td>
+              </tr>
+              <tr class="bg-card shadow-card">
+                <td class="px-4 py-3 font-medium">Result</td>
+                <td class="px-4 py-3">Looks like everyone else</td>
+                <td class="px-4 py-3"><span class="font-semibold">Your brand stands out</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section id="proof" class="container mx-auto px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center">What Shops Say</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <p class="text-foreground/90 italic">“Our site finally feels like us. Customers book service and learn our story before they ever hit an inventory page.”</p>
+            <div class="mt-3 text-sm text-muted-foreground">— Mike, Independent Bike Dealer</div>
+          </div>
+          <div class="rounded-2xl bg-card p-6 shadow-card">
+            <p class="text-foreground/90 italic">“Summit Sites shifted us from product-first to people-first. Engagement is up and calls are way easier to earn.”</p>
+            <div class="mt-3 text-sm text-muted-foreground">— Jess, Store Manager</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BOOK A CALL (Calendly) ================= -->
+    <section id="book" class="container mx-auto px-6 pb-20">
+      <div class="mx-auto max-w-3xl rounded-2xl bg-card p-6 shadow-card">
+        <h2 class="text-xl sm:text-2xl font-semibold text-center">Ready to make your website feel like YOUR shop?</h2>
+        <p class="mt-2 text-center text-muted-foreground">Pick a time that works for you. We’ll review your current site and map an identity-first upgrade.</p>
+
+        <!-- Calendly: your slug foster-nailyournewsletter -->
+        <div class="mt-6">
+          <div class="calendly-inline-widget w-full"
+               data-url="https://calendly.com/foster-nailyournewsletter?hide_gdpr_banner=1"
+               style="min-width:320px;height:680px;"></div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
+  <!-- Calendly -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- UTM passthrough -->
   <script src="./script.js"></script>
 </body>
 </html>
